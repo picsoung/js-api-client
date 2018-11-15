@@ -42,6 +42,9 @@ const addWorkspace = (http, { name }) => {
 
 const updateWorkspace = (http, { id, data } = {}) => {
   return http.request({
+    headers: {
+      'Content-Type': 'application/json'
+    },
     method: 'patch',
     url: `/workspaces/${id}`,
     data
